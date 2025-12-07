@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM node:22-bullseye AS backend-builder
+FROM node:22-bullseye AS backend-builder
 
 WORKDIR /app
 
@@ -13,7 +13,7 @@ COPY backend/. .
 RUN DATABASE_URL=not_required npx prisma generate --schema=prisma/schema.prisma
 RUN npm run build
 
-FROM --platform=$BUILDPLATFORM node:22-bullseye AS frontend-builder
+FROM node:22-bullseye AS frontend-builder
 
 WORKDIR /app
 
@@ -47,6 +47,6 @@ EXPOSE 80
 
 RUN chmod +x /usr/share/nginx/entrypoint.sh
 
-ENV BETTER_AUTH_URL="http://localhost:3000"
+ENV BETTER_AUTH_URL="http://192.168.1.5:8084"
 
 CMD ["/usr/share/nginx/entrypoint.sh"]
