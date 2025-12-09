@@ -47,6 +47,4 @@ EXPOSE 80
 
 RUN chmod +x /usr/share/nginx/entrypoint.sh
 
-ENV BETTER_AUTH_URL="http://192.168.1.5:8084"
-
 CMD ["/usr/share/nginx/entrypoint.sh"]
