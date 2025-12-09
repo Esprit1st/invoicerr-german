@@ -49,8 +49,8 @@ export const baseTemplate = `
         {{client.address}}<br>
         {{client.postalCode}} {{client.city}}<br>
         {{client.email}}</p>
-        {{#if client.legalId}}<strong>{{labels.legalId}}:</strong> {{client.legalId}}<br>{{/if}}
-        {{#if client.VAT}}<strong>{{labels.VATId}}:</strong> {{client.VAT}}{{/if}}</p>
+        {{#if client.legalId}}{{labels.legalId}}: {{client.legalId}}<br>{{/if}}
+        {{#if client.VAT}}{{labels.VATId}}: {{client.VAT}}{{/if}}</p>
     </div>
     <table>
         <thead>
